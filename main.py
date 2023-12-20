@@ -49,11 +49,11 @@ def download_files(service, date_prefix, file_type):
     Download files from Google Drive with a specific prefix and type.
     """
     try:
+
         file_path = f"{DATA_DIR}/{date_prefix}/{file_type}/"
         create_directory(file_path)
-
-        query = f"name contains '{date_prefix}'" if file_type == "Audio" else f"'export_{date_prefix[0:4]}-{date_prefix[4:6]}-{date_prefix[6:8]}'"
-        results = service.files().list(q=query, corpora='drive', driveId=DRIVE_ID, 
+        query = f"name contains '{date_prefix}'" if file_type == "Audio" else f"name contains 'export_{date_prefix[0:4]}-{date_prefix[4:6]}-{date_prefix[6:8]}'"
+        results = service.files().list(q=query, corpora='drive', driveId=DRIVE_ID,
                                        supportsAllDrives=True, includeItemsFromAllDrives=True,
                                        spaces='drive', fields='nextPageToken, files(id, name)').execute()
         items = results.get('files', [])
@@ -91,14 +91,12 @@ def validate_date(input_date):
 
 
 def main():
-
     parser = argparse.ArgumentParser(description="Process and handle audio files.")
     parser.add_argument("--date", help="The date of the recordings in dd/mm/yyyy format", required=True)
     parser.add_argument("--download", help="Download files", action="store_true")
     parser.add_argument("--transcribe", help="Transcribe files", action="store_true")
     parser.add_argument("--upload", help="Upload files", action="store_true")
-    parser.add_argument("--whispermodel", help="Version of whisper model to use", type=str)
-    
+    parser.add_argument("--whispermodel", help="Version of whisper model to use", type=str)    
     args = parser.parse_args()
 
     date_input = args.date
@@ -128,7 +126,6 @@ def main():
         pass
 
     print("Operation completed.")
-
 
 if __name__ == "__main__":    
     main()
