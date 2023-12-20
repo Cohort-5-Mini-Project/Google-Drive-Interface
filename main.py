@@ -103,14 +103,14 @@ def main():
     date_prefix = validate_date(date_input)
     if not date_prefix:
         print("Invalid date format. Please enter the date in dd/mm/yyyy format.")
-        return
+        exit(1)
 
     service = None
     if args.download or args.upload:
-        service = authenticate_google_drive()
+        service = authenticate_oogle_drive()
 
     if args.download:
-        download_files(service, date_prefix, "Audio")
+        # download_files(service, date_prefix, "Audio")
         download_files(service, date_prefix, "Logs")
         print(f"Download completed for date: {date_prefix}")
 
