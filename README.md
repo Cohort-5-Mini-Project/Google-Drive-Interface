@@ -75,9 +75,7 @@ The repository powers an application that enables automatic transcription of aud
 ##  📦 Features
 
   
-
-|  | Feature | Description |
-
+|    | Feature            | Description                                                                                                        |
 |----|--------------------|--------------------------------------------------------------------------------------------------------------------|
 
 | ⚙️ |  **Architecture**  | The repository is constructed from five main components, `main.py`, `requirements.txt`, `wspr_transcribe.py`, `credentials.json`, `token.json`. The system uses Google Drive API, OpenAI's Whisper ASR API.   |
