@@ -14,10 +14,10 @@ def translate_audio(file_path, date, model):
         file.write(json.dumps(result))
     
 
-def transcribe(date):
+def transcribe(date, model_size = "base"):
     """Transcribe audio to text."""
     print(f"Transcribing {date}...")
-    model = whisper.load_model("base")
+    model = whisper.load_model(model_size)
     # Get a list of all audio files in the directory
     audio_files = glob.glob(f"./data/recordings/{date}/Audio/*.wav")
     print(f"Found {len(audio_files)} audio files.")

@@ -97,6 +97,8 @@ def main():
     parser.add_argument("--download", help="Download files", action="store_true")
     parser.add_argument("--transcribe", help="Transcribe files", action="store_true")
     parser.add_argument("--upload", help="Upload files", action="store_true")
+    parser.add_argument("--whispermodel", help="Version of whisper model to use", type=str)
+    
     args = parser.parse_args()
 
     date_input = args.date
@@ -109,14 +111,17 @@ def main():
     if args.download or args.upload:
         service = authenticate_google_drive()
 
-    if args.download:
-        download_files(service, date_prefix, "Audio")
-        download_files(service, date_prefix, "Logs")
-        print(f"Download completed for date: {date_prefix}")
+    # if args.download:
+    #     download_files(service, date_prefix, "Audio")
+    #     download_files(service, date_prefix, "Logs")
+    #     print(f"Download completed for date: {date_prefix}")
 
     if args.transcribe:
         create_directory(f"{DATA_DIR}/{date_prefix}/Text")
-        transcribe(date_prefix)
+        if args.whispermodel:
+            transcribe(date_prefix, args.whispermodel)
+        else:
+            transcribe(date_prefix)
 
     if args.upload:
         # Implement upload functionality here
