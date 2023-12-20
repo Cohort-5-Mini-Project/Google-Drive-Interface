@@ -91,23 +91,6 @@ def validate_date(input_date):
 
 
 def main():
-    # service = authenticate_google_drive()
-
-    # # for _ in range(5):
-    # #     date_input = input("The date of the recordings dd/mm/yyyy: ")
-    # #     date_prefix = validate_date(date_input)
-    # #     if date_prefix:
-    # #         break
-    # #     print("Invalid date format. Please try again.")
-    # # else:
-    # #     print("You have entered the date incorrectly too many times. Please seek assistance from the developer.")
-    # #     return
-    # date_prefix = '20231218'
-    # # download_files(service, date_prefix, "Audio")
-    # # download_files(service, date_prefix, "Logs")
-    # print(f"Download completed for date: {date_prefix}")
-    # create_directory(f"{DATA_DIR}/{date_prefix}/Text")
-    # transcribe(date_prefix)
 
     parser = argparse.ArgumentParser(description="Process and handle audio files.")
     parser.add_argument("--date", help="The date of the recordings in dd/mm/yyyy format", required=True)
