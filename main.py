@@ -111,10 +111,10 @@ def main():
     if args.download or args.upload:
         service = authenticate_google_drive()
 
-    # if args.download:
-    #     download_files(service, date_prefix, "Audio")
-    #     download_files(service, date_prefix, "Logs")
-    #     print(f"Download completed for date: {date_prefix}")
+    if args.download:
+        download_files(service, date_prefix, "Audio")
+        download_files(service, date_prefix, "Logs")
+        print(f"Download completed for date: {date_prefix}")
 
     if args.transcribe:
         create_directory(f"{DATA_DIR}/{date_prefix}/Text")
