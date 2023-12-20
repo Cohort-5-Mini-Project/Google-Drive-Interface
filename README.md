@@ -64,13 +64,31 @@
 
   
 
-The repository powers an application that enables automatic transcription of audio files. By leveraging the Whisper API and Google services, the application can extract audio files from Google Drive based on a specified date, transcribe them into text, and then upload the transcriptions back to Drive. This end-to-end automation makes the application valuable to users who handle large volumes of audio data, such as journalists or researchers. It optimizes their workflow by reducing the time and effort needed to manually transcribe audio content.
+The repository powers an application that enables the automatic transcription of audio files. By leveraging the Whisper API and Google services, the application can extract audio files from Google Drive based on a specified date, transcribe them into text, and then upload the transcriptions back to Drive. This end-to-end automation makes the application valuable to users who handle large volumes of audio data, such as journalists or researchers. It optimizes their workflow by reducing the time and effort needed to transcribe audio content manually.
 
   
 
 ---
 
   
+## 📦 Features
+
+|    | Feature            | Description                                                                                                        |
+|----|--------------------|--------------------------------------------------------------------------------------------------------------------|
+| ⚙️ | **Architecture**   | The repository is constructed from five main components, `main.py`, `requirements.txt`, `wspr_transcribe.py`, `credentials.json`, `token.json`. The system uses Google Drive API, OpenAI's Whisper ASR API. |
+| 📄 | **Documentation**  | Comments are provided within the code, however, there's no standalone documentation that details the codebase architecture or usage. |
+| 🔗 | **Dependencies**   | The system makes use of numerous libraries including aiohttp for asynchronous HTTP requests, attrs for attribute management, and Google API services. |
+| 🧩 | **Modularity**     | The code is well-organized with functions separated into modules handling Google Drive interactions and WSRP transcriptions. |
+| 🧪 | **Testing**        | No clear testing strategy or test files are included. The codebase lacks a clear test component which is crucial for development. |
+| ⚡️  | **Performance**    | With no observable performance optimizations or benchmarking, it's unclear how efficient the system is during large file handling. |
+| 🔐 | **Security**       | OAuth 2.0 authentication is used for secure communication with Google Drive, ensuring secure data transmission.|
+| 🔀 | **Version Control**| No specific version control strategy discovered. Ideally, commit history should be available for analysis.|
+| 🔌 | **Integrations**   | The system integrates with Google Drive for file fetching and leverages OpenAI's Whisper API for audio transcriptions.|
+| 📶 | **Scalability**    | The scalability remains uncertain due to the lack of information about how the system handles a large number of files or concurrent requests. |
+
+---
+
+
 
 ##  📦 Features
 
@@ -78,7 +96,7 @@ The repository powers an application that enables automatic transcription of aud
 |    | Feature            | Description                                                                                                        |
 |----|--------------------|--------------------------------------------------------------------------------------------------------------------|
 
-| ⚙️ |  **Architecture**  | The repository is constructed from five main components, `main.py`, `requirements.txt`, `wspr_transcribe.py`, `credentials.json`, `token.json`. The system uses Google Drive API, OpenAI's Whisper ASR API.   |
+| ⚙️ |  **Architecture**  |  |
 
 | 🔗 |  **Dependencies**  | The `requirements.txt` file lists quite a broad range of dependencies, including those for HTTP communication, cryptography, Google service interaction, and Open AI's whisper API. |
 
