@@ -75,32 +75,13 @@ The repository powers an application that enables the automatic transcription of
 
 |    | Feature            | Description                                                                                                        |
 |----|--------------------|--------------------------------------------------------------------------------------------------------------------|
-| ⚙️ | **Architecture**   | The repository is constructed from five main components, `main.py`, `requirements.txt`, `wspr_transcribe.py`, `credentials.json`, `token.json`. The system uses Google Drive API, OpenAI's Whisper ASR API. |
-| 📄 | **Documentation**  | Comments are provided within the code, however, there's no standalone documentation that details the codebase architecture or usage. |
-| 🔗 | **Dependencies**   | The system makes use of numerous libraries including aiohttp for asynchronous HTTP requests, attrs for attribute management, and Google API services. |
-| 🧩 | **Modularity**     | The code is well-organized with functions separated into modules handling Google Drive interactions and WSRP transcriptions. |
-| 🧪 | **Testing**        | No clear testing strategy or test files are included. The codebase lacks a clear test component which is crucial for development. |
-| ⚡️  | **Performance**    | With no observable performance optimizations or benchmarking, it's unclear how efficient the system is during large file handling. |
+| ⚙️ | **Architecture**   | The repository is constructed from five main components, `main.py`, `requirements.txt`, `wspr_transcribe.py`, `credentials.json`, `token.json`. The system uses Google Drive API, and OpenAI's Whisper ASR API. |
+| 📄 | **Documentation**  | The `requirements.txt` file lists quite a broad range of dependencies, including those for HTTP communication, cryptography, Google service interaction, and Open AI's whisper API. |
 | 🔐 | **Security**       | OAuth 2.0 authentication is used for secure communication with Google Drive, ensuring secure data transmission.|
-| 🔀 | **Version Control**| No specific version control strategy discovered. Ideally, commit history should be available for analysis.|
-| 🔌 | **Integrations**   | The system integrates with Google Drive for file fetching and leverages OpenAI's Whisper API for audio transcriptions.|
-| 📶 | **Scalability**    | The scalability remains uncertain due to the lack of information about how the system handles a large number of files or concurrent requests. |
 
 ---
 
 
-
-##  📦 Features
-
-  
-|    | Feature            | Description                                                                                                        |
-|----|--------------------|--------------------------------------------------------------------------------------------------------------------|
-
-| ⚙️ |  **Architecture**  |  |
-
-| 🔗 |  **Dependencies**  | The `requirements.txt` file lists quite a broad range of dependencies, including those for HTTP communication, cryptography, Google service interaction, and Open AI's whisper API. |
-
-| 🔐 |  **Security**  | The system uses OAuth 2.0 via `credentials.json` and `token.json` for secure access to Google's Drive and Whisper APIs. However, storing these files in the code repository might expose sensitive information, potentially compromising security. |
 
 
 ---
