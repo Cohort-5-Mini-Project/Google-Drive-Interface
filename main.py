@@ -7,12 +7,10 @@ import io
 import argparse
 import sys
 from googleapiclient.discovery import build
-from googleapiclient.http import MediaIoBaseDownload
+from googleapiclient.http import MediaIoBaseDownload, MediaFileUpload
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
-
-
 from wspr_transcribe import transcribe
 
 # Constants and Configuration
@@ -109,6 +107,88 @@ def validate_date(input_date):
         return None
 
 
+def find_or_create_folder(service, folder_name, parent_id=None, drive_id=None):
+    """Find a folder by name or create it if it doesn't exist."""
+    query = f'mimeType="application/vnd.google-apps.folder" and name="{folder_name}"'
+    if parent_id:
+        query += f' and "{parent_id}" in parents'
+
+    response = (
+        service.files()
+        .list(
+            q=query,
+            spaces="drive",
+            corpora="drive",
+            driveId=drive_id,
+            includeItemsFromAllDrives=True,
+            supportsAllDrives=True,
+        )
+        .execute()
+    )
+    folder = response.get("files")
+
+    if not folder:
+        folder_metadata = {
+            "name": folder_name,
+            "mimeType": "application/vnd.google-apps.folder",
+            "parents": [parent_id] if parent_id else [],
+        }
+        folder = (
+            service.files()
+            .create(
+                body=folder_metadata,
+                driveid=drive_id,
+                supportsAllDrives=True,
+                fields="id",
+            )
+            .execute()
+        )
+        return folder.get("id")
+
+    return folder[0].get("id")
+
+
+def upload_files(service, date_prefix, file_type, drive_id):
+    """Upload files to a specific path in Google Drive."""
+    base_folder_id = find_or_create_folder(service, "Recording Prep", drive_id=drive_id)
+    pilot_folder_id = find_or_create_folder(
+        service, "Pilot recordings", parent_id=base_folder_id, drive_id=drive_id
+    )
+    session_folder_id = find_or_create_folder(
+        service, "Recording Sessions", parent_id=pilot_folder_id, drive_id=drive_id
+    )
+    date_folder_id = find_or_create_folder(
+        service,
+        f"{date_prefix[6:8]}_{date_prefix[4:6]}_{date_prefix[0:4]}",
+        parent_id=session_folder_id,
+        drive_id=drive_id,
+    )
+    text_folder_id = find_or_create_folder(
+        service, "Text", parent_id=date_folder_id, drive_id=drive_id
+    )
+
+    upload_path = f"{DATA_DIR}/{date_prefix}/{file_type}/"
+
+    for file_name in os.listdir(upload_path):
+        file_path = os.path.join(upload_path, file_name)
+        if os.path.isfile(file_path):
+            print(f"Uploading {file_name}...")
+            file_metadata = {"name": file_name, "parents": [text_folder_id]}
+
+            media = MediaFileUpload(file_path, mimetype="text/plain")
+            file = (
+                service.files()
+                .create(
+                    body=file_metadata,
+                    supportsAllDrives=True,
+                    media_body=media,
+                    fields="id",
+                )
+                .execute()
+            )
+            print(f"Uploaded file with ID: {file.get('id')}")
+
+
 def main():
     """
     Main function to handle command line arguments and call other functions.
@@ -136,7 +216,7 @@ def main():
         service = authenticate_google_drive()
 
     if args.download:
-        # download_files(service, date_prefix, "Audio")
+        download_files(service, date_prefix, "Audio")
         download_files(service, date_prefix, "Logs")
         print(f"Download completed for date: {date_prefix}")
 
@@ -148,8 +228,7 @@ def main():
             transcribe(date_prefix)
 
     if args.upload:
-        # Implement upload functionality here
-        pass
+        upload_files(service, date_prefix, "Text", drive_id=DRIVE_ID)
 
     print("Operation completed.")
 

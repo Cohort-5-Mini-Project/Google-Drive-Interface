@@ -1,6 +1,7 @@
 """Take an audiofile and transcibe it to text using Whisper API."""
 import glob
 import json
+import wave
 import whisper
 from tqdm import tqdm
 
@@ -18,11 +19,42 @@ def translate_audio(file_path, date, model):
         file.write(json.dumps(result))
 
 
+def get_duration_wave(file_path):
+    """Get duration of wave file."""
+    with wave.open(file_path, "r") as audio_file:
+        frame_rate = audio_file.getframerate()
+        n_frames = audio_file.getnframes()
+        duration = n_frames / float(frame_rate)
+        return duration
+
+
+def create_details_file(date, model_size="base"):
+    """Create a details file for the date."""
+    audio_files = glob.glob(f"./data/recordings/{date}/Audio/*.wav")
+    total_duration = 0
+    for file in audio_files:
+        total_duration += get_duration_wave(file)
+    total_duration = round(total_duration, 2)
+    details = {
+        "date": date,
+        "total_duration_seconds": total_duration,
+        "total_duration_minutes": round(total_duration / 60, 2),
+        "audio_files": glob.glob(f"./data/recordings/{date}/Audio/*.wav"),
+        "text_files": glob.glob(f"./data/recordings/{date}/Text/*.json"),
+        "whisper_model": model_size,
+    }
+    with open(
+        f"./data/recordings/{date}/Text/details.json", "w", encoding="utf-8"
+    ) as file:
+        file.write(json.dumps(details))
+
+
 def transcribe(date, model_size="base"):
-    """Transcribe audio to text.    
+    """Transcribe audio to text.
     Args:
         date (str): Date of the recordings to transcribe.
-        model_size (str, optional): Size of the model to use, options "base, medium, large" Defaults to "base".
+        model_size (str, optional): Size of the model to use, options "base, medium, large"
+        Defaults to "base".
 
     """
     print(f"Transcribing {date}...")
@@ -31,3 +63,5 @@ def transcribe(date, model_size="base"):
     print(f"Found {len(audio_files)} audio files.")
     for file in tqdm(audio_files):
         translate_audio(file, model=model, date=date)
+
+    create_details_file(date, model_size=model_size)
