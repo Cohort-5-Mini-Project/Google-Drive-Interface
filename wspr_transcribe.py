@@ -12,7 +12,7 @@ def translate_audio(file_path, date, model):
     print(file_path)
     print(result["text"])
     with open(
-        f"./data/recordings/{date}/Text/{file_path.split('/')[-1].split('.')[0]}.json",
+        f"./data/recordings/{date}/Text/transcribed_{file_path.split('/')[-1].split('.')[0]}.json",
         "w",
         encoding="utf-8",
     ) as file:
