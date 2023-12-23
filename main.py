@@ -11,7 +11,9 @@ from googleapiclient.http import MediaIoBaseDownload, MediaFileUpload
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
-from wspr_transcribe import transcribe
+from wspr_transcribe import transcribe, get_duration_wave
+import wave
+import math
 
 # Constants and Configuration
 SCOPES = ["https://www.googleapis.com/auth/drive"]
@@ -189,6 +191,57 @@ def upload_files(service, date_prefix, file_type, drive_id):
             print(f"Uploaded file with ID: {file.get('id')}")
 
 
+def split_audio_into_chunks(audio_file, chunk_size=30):
+    """Split audio file into chunks of 30 seconds."""
+    # Open the audio file
+    with wave.open(audio_file, 'rb') as audio:
+        # Get the sample rate and number of frames
+        sample_rate = audio.getframerate()
+        num_frames = audio.getnframes()
+
+        # Calculate the duration of each chunk in seconds
+        chunk_duration = chunk_size * sample_rate
+
+        # Calculate the total number of chunks
+        num_chunks = math.ceil(num_frames / chunk_duration)
+
+        # Create a list to store the chunk file names
+        chunk_files = []
+
+        # Split the audio into chunks
+        for i in range(num_chunks):
+            # Calculate the start and end frames of the chunk
+            start_frame = i * chunk_duration
+            end_frame = min((i + 1) * chunk_duration, num_frames)
+
+            # Set the file name for the chunk
+            chunk_file = f"{audio_file}_chunk_{i}.wav"
+
+            # Create a new wave file for the chunk
+            with wave.open(chunk_file, 'wb') as chunk:
+                # Set the parameters for the chunk
+                chunk.setparams(audio.getparams())
+
+                # Set the number of frames for the chunk
+                chunk.setnframes(end_frame - start_frame)
+
+                # Set the position of the audio file to the start frame of the chunk
+                audio.setpos(start_frame)
+
+                # Read the frames from the audio file and write them to the chunk file
+                chunk.writeframes(audio.readframes(end_frame - start_frame))
+
+            # Add the chunk file name to the list
+            chunk_files.append(chunk_file)
+
+    return chunk_files
+
+def delete_zero_byte_files(date_prefix):
+    """Delete zero byte wav files."""
+    for file in os.listdir(f"{DATA_DIR}/{date_prefix}/Audio"):
+        if os.path.getsize(f"{DATA_DIR}/{date_prefix}/Audio/{file}") == 0:
+            os.remove(f"{DATA_DIR}/{date_prefix}/Audio/{file}")
+
 def main():
     """
     Main function to handle command line arguments and call other functions.
@@ -214,6 +267,19 @@ def main():
     service = None
     if args.download or args.upload:
         service = authenticate_google_drive()
+
+    delete_zero_byte_files(date_prefix)
+    
+    for audio_file in os.listdir(f"{DATA_DIR}/{date_prefix}/Audio"):
+        # check if the file is > 30 second
+        # if yes, split it into chunks of 30 seconds
+        # else, skip
+        audio_length = get_duration_wave(f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}")
+        if audio_length <= 30:
+            continue
+        else:
+            print(f"Splitting {audio_file} into chunks...")
+            split_audio_into_chunks(f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}")
 
     if args.download:
         download_files(service, date_prefix, "Audio")
