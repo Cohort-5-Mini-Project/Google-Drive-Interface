@@ -58,7 +58,7 @@ def download_files(service, date_prefix, file_type):
         query = (
             f"name contains '{date_prefix}'"
             if file_type == "Audio"
-            else f"name contains 'export_{date_prefix[0:4]}-{date_prefix[4:6]}-{date_prefix[6:8]}'"
+            else f"name contains 'export_{date_prefix[:4]}-{date_prefix[4:6]}-{date_prefix[6:8]}'"
         )
         results = (
             service.files()
@@ -159,7 +159,7 @@ def upload_files(service, date_prefix, file_type, drive_id):
     )
     date_folder_id = find_or_create_folder(
         service,
-        f"{date_prefix[6:8]}_{date_prefix[4:6]}_{date_prefix[0:4]}",
+        f"{date_prefix[6:8]}_{date_prefix[4:6]}_{date_prefix[:4]}",
         parent_id=session_folder_id,
         drive_id=drive_id,
     )
@@ -211,10 +211,7 @@ def main():
         print("Invalid date format. Please enter the date in dd/mm/yyyy format.")
         sys.exit()
 
-    service = None
-    if args.download or args.upload:
-        service = authenticate_google_drive()
-
+    service = authenticate_google_drive() if args.download or args.upload else None
     if args.download:
         download_files(service, date_prefix, "Audio")
         download_files(service, date_prefix, "Logs")
