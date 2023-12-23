@@ -24,16 +24,13 @@ def get_duration_wave(file_path):
     with wave.open(file_path, "r") as audio_file:
         frame_rate = audio_file.getframerate()
         n_frames = audio_file.getnframes()
-        duration = n_frames / float(frame_rate)
-        return duration
+        return n_frames / float(frame_rate)
 
 
 def create_details_file(date, model_size="base"):
     """Create a details file for the date."""
     audio_files = glob.glob(f"./data/recordings/{date}/Audio/*.wav")
-    total_duration = 0
-    for file in audio_files:
-        total_duration += get_duration_wave(file)
+    total_duration = sum(get_duration_wave(file) for file in audio_files)
     total_duration = round(total_duration, 2)
     details = {
         "date": date,
