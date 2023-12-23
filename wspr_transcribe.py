@@ -46,6 +46,7 @@ def create_details_file(date, model_size="base"):
         file.write(json.dumps(details))
 
 
+
 def transcribe(date, model_size="base"):
     """Transcribe audio to text.
     Args:

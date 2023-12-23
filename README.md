@@ -25,7 +25,7 @@
 
 </div>
 
-  
+<p>This program allows downloading of wav files from a shared google drive, and then processing to occur, and allow the process files to be reuploaded.</p>
 
 ---
 
