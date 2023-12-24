@@ -8,7 +8,6 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 
-# Constants and Configuration
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 TOKEN_FILE = "token.json"
 CREDENTIALS_FILE = "credentials.json"
@@ -52,7 +51,6 @@ def find_or_create_folder(service, folder_name, parent_id=None, drive_id=None):
             service.files()
             .create(
                 body=folder_metadata,
-                # drive_id=drive_id,
                 supportsAllDrives=True,
                 fields="id",
             )
@@ -150,8 +148,12 @@ def upload_files(service, date_prefix, file_type, drive_id=DRIVE_ID, model="base
         service, "Text", parent_id=date_folder_id, drive_id=drive_id
     )
     run_folder_id = find_or_create_folder(
-        service, f"{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_{model}", parent_id=text_folder_id, drive_id=drive_id)
- 
+        service,
+        f"{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_{model}",
+        parent_id=text_folder_id,
+        drive_id=drive_id,
+    )
+
     upload_path = f"{DATA_DIR}/{date_prefix}/{file_type}/"
 
     for file_name in os.listdir(upload_path):

@@ -5,6 +5,7 @@ import wave
 import whisper
 from tqdm import tqdm
 
+
 def translate_audio(file_path, date, model):
     """Translate audio to text."""
     result = model.transcribe(file_path, language="en", fp16=False, verbose=True)
@@ -26,7 +27,7 @@ def get_duration_wave(file_path):
         return n_frames / float(frame_rate)
 
 
-def create_details_file(date, model_size="base"):
+def create_details_file(date, model_size="large-v3"):
     """Create a details file for the date."""
     audio_files = glob.glob(f"./data/recordings/{date}/Audio/*.wav")
     total_duration = sum(get_duration_wave(file) for file in audio_files)
@@ -45,7 +46,6 @@ def create_details_file(date, model_size="base"):
         file.write(json.dumps(details))
 
 
-
 def transcribe(date, model_size="base"):
     """Transcribe audio to text.
     Args:
@@ -57,7 +57,9 @@ def transcribe(date, model_size="base"):
     print(f"Transcribing {date}...")
     model = whisper.load_model(model_size)
     audio_files = glob.glob(f"./data/recordings/{date}/Audio/*.wav")
-    audio_files = [file for file in audio_files if "prechunked" not in file]    # exclude any files that start with chunked
+    audio_files = [
+        file for file in audio_files if "prechunked" not in file
+    ]
     print(f"Found {len(audio_files)} audio files.")
     for file in tqdm(audio_files):
         translate_audio(file, model=model, date=date)

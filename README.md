@@ -107,6 +107,8 @@ Note that `credentials.json` will need to  be provided by the user. To do this p
 
 └──  wspr_transcribe.py
 
+└──  wspr_api.py
+
   
 
 ```
@@ -139,6 +141,8 @@ Note that `credentials.json` will need to  be provided by the user. To do this p
 |  [credentials.json]({file_path})  | The credentials.json file contains configuration settings necessary for OAuth 2.0 authentication with Google's API. The file includes the client id & secret, project id, auth & token URIs, certificate URL, and various redirect URIs and JavaScript origins for handling authorized requests and responses. |
 
 |  [token.json]({file_path})  | The token.json file holds authentication and authorization details for the Google Drive API, including tokens (main and refresh), token URI, client ID and secret, required scopes, and the token's expiry date. This information enables secure access to the Drive API's functionalities for programmatic data manipulation on Google Drive. |
+
+|  [whisper_api]({file_path})  | The code in whisper_api uses the LemonFox's api to translate the chunked files using whisper model large-v3. Warning: This does incur a cost. |
 
   
 
@@ -195,6 +199,13 @@ pip  install  -r  requirements.txt
 
 ```
 
+4. Copy the config.json and fill in:
+
+```sh
+
+cp config.json.example config.json
+
+```
   
 
 ###  🤖 Running
@@ -203,7 +214,7 @@ pip  install  -r  requirements.txt
 
 ```sh
 
-python  main.py --date=18/12/2023 --download --transcribe --whispermodel=medium
+  python main.py --date <date> [--download] [--transcribe] [--upload] [--whispermodel <model>] [--split <seconds>] [--api <api_key>]
 
 ```
 
