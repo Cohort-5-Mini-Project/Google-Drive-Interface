@@ -17,10 +17,6 @@ from google_drive_functions import (
 from wspr_transcribe import get_duration_wave, transcribe
 
 # Constants and Configuration
-SCOPES = ["https://www.googleapis.com/auth/drive"]
-TOKEN_FILE = "token.json"
-CREDENTIALS_FILE = "credentials.json"
-DRIVE_ID = "0AMC2Evk8hvfdUk9PVA"
 DATA_DIR = "./data/recordings"
 
 
@@ -36,7 +32,7 @@ def validate_date(input_date):
         return None
 
 
-def split_audio_into_chunks(audio_file, chunk_size=30):
+def split_audio_into_chunks(audio_file, chunk_size=30, date_prefix=None):
     """Split audio file into chunks of 30 seconds."""
     # Open the audio file
     with wave.open(audio_file, "rb") as audio:
@@ -60,8 +56,7 @@ def split_audio_into_chunks(audio_file, chunk_size=30):
             end_frame = min((i + 1) * chunk_duration, num_frames)
 
             # Set the file name for the chunk
-            chunk_file = f"{audio_file}_chunk_{i}.wav"
-
+            chunk_file = f"{DATA_DIR}/{date_prefix}/Audio/{audio_file.split('/')[-1].split('.')[0]}_chunk_{i}.wav"
             # Create a new wave file for the chunk
             with wave.open(chunk_file, "wb") as chunk:
                 # Set the parameters for the chunk
@@ -111,12 +106,12 @@ def main():
             if audio_length >= split:
                 print(f"Splitting {audio_file} into chunks...")
                 split_audio_into_chunks(
-                    f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}", split
+                    f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}", split, date_prefix
                 )
                 # rename the original file
                 os.rename(
                     f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}",
-                    f"{DATA_DIR}/{date_prefix}/Audio/prechunked_{audio_file}_original",
+                    f"{DATA_DIR}/{date_prefix}/Audio/prechunked_{audio_file}",
                 )
     if args.transcribe:
         create_directory(f"{DATA_DIR}/{date_prefix}/Text")
@@ -126,7 +121,7 @@ def main():
             transcribe(date_prefix)
 
     if args.upload:
-        upload_files(service, date_prefix, "Text", drive_id=DRIVE_ID)
+        upload_files(service, date_prefix, "Text", model=args.whispermodel)
 
     print("Operation completed.")
 
@@ -152,7 +147,7 @@ def parse_args():
     )
     parser.add_argument(
         "--split",
-        help="Split audio files into seconds, 30 or under required for whisper API",
+        help="Usage --split 30, Split audio files into seconds, 30 or under required for whisper API",
     )
     args = parser.parse_args()
 

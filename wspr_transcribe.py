@@ -5,7 +5,6 @@ import wave
 import whisper
 from tqdm import tqdm
 
-
 def translate_audio(file_path, date, model):
     """Translate audio to text."""
     result = model.transcribe(file_path, language="en", fp16=False, verbose=True)
