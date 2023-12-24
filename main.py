@@ -109,9 +109,7 @@ def main():
         print("Invalid date format. Please enter the date in dd/mm/yyyy format.")
         sys.exit()
 
-    service = None
-    if args.download or args.upload:
-        service = authenticate_google_drive()
+    service = authenticate_google_drive() if args.download or args.upload else None
 
     if args.download:
         download_files(service, date_prefix, "Audio")
