@@ -11,7 +11,7 @@
             "program": "main.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["--date=18/12/2023","--download", "--upload","--transcribe", "--whispermodel=medium"]
+            "args": ["--date=18/12/2023","--download", "--upload","--transcribe", "--split=20",  "--whispermodel=base"]
         }
     ]
 }

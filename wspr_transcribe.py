@@ -61,8 +61,8 @@ def transcribe(date, model_size="base"):
     print(f"Transcribing {date}...")
     model = whisper.load_model(model_size)
     audio_files = glob.glob(f"./data/recordings/{date}/Audio/*.wav")
+    audio_files = [file for file in audio_files if "prechunked" not in file]    # exclude any files that start with chunked
     print(f"Found {len(audio_files)} audio files.")
     for file in tqdm(audio_files):
         translate_audio(file, model=model, date=date)
-
     create_details_file(date, model_size=model_size)
