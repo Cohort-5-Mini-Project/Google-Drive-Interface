@@ -267,7 +267,7 @@ def main():
     service = authenticate_google_drive() if args.download or args.upload else None
 
     delete_zero_byte_files(date_prefix)
-    
+
     for audio_file in os.listdir(f"{DATA_DIR}/{date_prefix}/Audio"):
         # check if the file is > 30 second
         # if yes, split it into chunks of 30 seconds
@@ -275,9 +275,8 @@ def main():
         audio_length = get_duration_wave(f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}")
         if audio_length <= 30:
             continue
-        else:
-            print(f"Splitting {audio_file} into chunks...")
-            split_audio_into_chunks(f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}")
+        print(f"Splitting {audio_file} into chunks...")
+        split_audio_into_chunks(f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}")
 
     if args.download:
         download_files(service, date_prefix, "Audio")
