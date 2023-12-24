@@ -1,12 +1,11 @@
-
-import os
 import io
-from googleapiclient.discovery import build
-from googleapiclient.http import MediaIoBaseDownload, MediaFileUpload
-from google_auth_oauthlib.flow import InstalledAppFlow
+import os
+
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
-
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 
 # Constants and Configuration
 SCOPES = ["https://www.googleapis.com/auth/drive"]
@@ -15,10 +14,12 @@ CREDENTIALS_FILE = "credentials.json"
 DRIVE_ID = "0AMC2Evk8hvfdUk9PVA"
 DATA_DIR = "./data/recordings"
 
+
 def create_directory(path):
     """Create directory if it does not exist."""
     if not os.path.exists(path):
         os.makedirs(path)
+
 
 def find_or_create_folder(service, folder_name, parent_id=None, drive_id=None):
     """Find a folder by name or create it if it doesn't exist."""
@@ -71,7 +72,7 @@ def download_files(service, date_prefix, file_type):
         query = (
             f"name contains '{date_prefix}' and not name contains 'chunk' and not name contains 'transcribed' and mimeType = 'audio/wav'"
             if file_type == "Audio"
-            else f"name contains 'export_{date_prefix[0:4]}-{date_prefix[4:6]}-{date_prefix[6:8]}' and mimeType = 'application/json'"
+            else f"name contains 'export_{date_prefix[:4]}-{date_prefix[4:6]}-{date_prefix[6:8]}' and mimeType = 'application/json'"
         )
         results = (
             service.files()
@@ -107,6 +108,7 @@ def download_files(service, date_prefix, file_type):
     except Exception as e:
         print(f"An error occurred: {e}")
 
+
 def authenticate_google_drive():
     """
     Authenticate with Google Drive and return the service object.
@@ -139,7 +141,7 @@ def upload_files(service, date_prefix, file_type, drive_id):
     )
     date_folder_id = find_or_create_folder(
         service,
-        f"{date_prefix[6:8]}_{date_prefix[4:6]}_{date_prefix[0:4]}",
+        f"{date_prefix[6:8]}_{date_prefix[4:6]}_{date_prefix[:4]}",
         parent_id=session_folder_id,
         drive_id=drive_id,
     )
