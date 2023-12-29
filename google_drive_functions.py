@@ -1,6 +1,18 @@
+"""
+This module provides functions for interacting with Google Drive, including creating directories, finding or creating folders, downloading files, authenticating with Google Drive, and uploading files.
+
+Functions:
+- create_directory(path): Create a directory if it does not exist.
+- find_or_create_folder(service, folder_name, parent_id=None, drive_id=None): Find a folder by name or create it if it doesn't exist.
+- download_files(service, date_prefix, file_type): Download files from Google Drive with a specific prefix and type.
+- authenticate_google_drive(): Authenticate with Google Drive and return the service object.
+- upload_files(service, date_prefix, file_type, drive_id=DRIVE_ID, model="base"): Upload files to a specific path in Google Drive.
+"""
+
 import io
 import os
 import datetime
+import json
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -8,18 +20,20 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 
+with open("config.json", "r", encoding="utf-8") as f:
+    config = json.load(f)
+
 SCOPES = ["https://www.googleapis.com/auth/drive"]
-TOKEN_FILE = "token.json"
-CREDENTIALS_FILE = "credentials.json"
-DRIVE_ID = "0AMC2Evk8hvfdUk9PVA"
-DATA_DIR = "./data/recordings"
+DATA_DIR = config["data_dir"]
+TOKEN_FILE = config["TOKEN_FILE"]
+CREDENTIALS_FILE = config["CREDENTIALS_FILE"]
+DRIVE_ID = config["DRIVE_ID"]
 
 
 def create_directory(path):
     """Create directory if it does not exist."""
     if not os.path.exists(path):
         os.makedirs(path)
-
 
 def find_or_create_folder(service, folder_name, parent_id=None, drive_id=None):
     """Find a folder by name or create it if it doesn't exist."""

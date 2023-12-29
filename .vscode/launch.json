@@ -1,7 +1,4 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
@@ -11,7 +8,7 @@
             "program": "main.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["--date=18/12/2023", "--upload","--transcribe", "--api=orCDS3hPOFC5u3fmqy3mAm3ZyB2EBEqV"]
+            "args": ["--date=18/12/2023", "--lemonfoxapi"]
         }
     ]
 }
