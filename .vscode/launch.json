@@ -8,7 +8,7 @@
             "program": "main.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["--date=18/12/2023", "--lemonfoxapi"]
+            "args": ["--date=18/12/2023","--download", "--lemonfoxapi"]
         }
     ]
 }

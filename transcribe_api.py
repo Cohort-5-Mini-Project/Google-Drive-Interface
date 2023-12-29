@@ -72,6 +72,26 @@ def get_files_to_transcribe(date_prefix, api):
 
 
 def exponential_backoff_decorator(max_retries, base_delay):
+    """
+    Decorator that adds retry functionality to a function.
+
+    Args:
+        func (callable): The function to be decorated.
+
+    Returns:
+        callable: The decorated function.
+
+    Raises:
+        Exception: If the maximum number of retries is reached and the operation still fails.
+
+    Examples:
+        >>> @decorator
+        ... def my_function():
+        ...     # Function implementation
+        ...
+        >>> my_function()
+    """
+
     def decorator(func):
         def wrapper(*args, **kwargs):
             retries = 0
@@ -94,11 +114,27 @@ def exponential_backoff_decorator(max_retries, base_delay):
 
 @exponential_backoff_decorator(max_retries=5, base_delay=1)
 def send_request(url, headers, files, data):
-    response = requests.post(url, headers=headers, files=files, data=data, timeout=600)
-    return response
+    """
+    Send a request to the Transcription API."""
+    return requests.post(url, headers=headers, files=files, data=data, timeout=600)
 
 
 def new_transcribe(date_prefix, api_type, auth_token):
+    """
+    Transcribes audio files using different APIs based on the specified API type.
+
+    Args:
+        date_prefix (str): The date prefix used to identify the files to transcribe.
+        api_type (str): The type of API to use for transcription.
+        auth_token (str): The authentication token for API authorization.
+
+    Raises:
+        ValueError: If the specified API type is not supported.
+
+    Examples:
+        >>> new_transcribe("2022-01-01", "lemonfox", "my_auth_token")
+    """
+
     files_to_transcribe = get_files_to_transcribe(date_prefix, api_type)
 
     if api_type == "lemonfox":
@@ -109,7 +145,7 @@ def new_transcribe(date_prefix, api_type, auth_token):
             "response_format": "verbose_json",
         }
     elif api_type == "whisper":
-        url = config["whisperfoxAPIURL"]
+        url = config["whisperAPIURL"]
         data = {
             "language": "en",
             "initial_prompt": config["audio_prompt"],

@@ -152,6 +152,17 @@ def main():
 
 
 def chunk_for_api(config_param, date_prefix):
+    """
+    Chunks audio files into smaller sizes based on the specified configuration parameter.
+
+    Args:
+        config_param (str): The configuration parameter used to determine the file size limit.
+        date_prefix (str): The date prefix used to identify the files to chunk.
+
+    Examples:
+        >>> chunk_for_api("whisperFileLimit", "2022-01-01")
+    """
+
     file_limit = config[config_param]
     print(
         f"Splitting audio files into sizes of {file_limit}mb as per whisper API requirements."
@@ -160,6 +171,17 @@ def chunk_for_api(config_param, date_prefix):
 
 
 def chunk_files(date_prefix, file_limit):
+    """
+    Chunks audio files into smaller sizes based on the specified file size limit.
+
+    Args:
+        date_prefix (str): The date prefix used to identify the files to chunk.
+        file_limit (float): The file size limit in megabytes.
+
+    Examples:
+        >>> chunk_files("2022-01-01", 10.0)
+    """
+
     for audio_file in os.listdir(f"{DATA_DIR}/{date_prefix}/Audio"):
         audio_length = (
             os.path.getsize(f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}")
@@ -177,8 +199,6 @@ def chunk_files(date_prefix, file_limit):
                 f"{DATA_DIR}/{date_prefix}/Audio/{audio_file}",
                 f"{DATA_DIR}/{date_prefix}/Audio/under_api_{audio_file}",
             )
-
-
 
 
 def parse_args():
