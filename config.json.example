@@ -1,4 +1,16 @@
 {
-    "api_key": "your_api_key_here",
-    "data_dir": "./data/recordings"
+    "lemonfox_api_key": "",
+    "lemonfox_api_file_size_limit": 90,
+    "whisper_api_key": "",
+    "whisper_api_file_size_limit": 20,
+    "data_dir": "./data/recordings",
+    "lemonfoxAPIURL": "https://api.lemonfox.ai/v1/audio/transcriptions",
+    "whisperAPIURL": "https://api.openai.com/v1/audio/transcriptions",
+    "language": "english",
+    "response_format": "verbose_json",
+    "audio_prompt": "This transcript is from a drive through restaurant scenario. MAMBO, REGULAR, VEGGIE, ZINGER, FRIES, MANBO, CHICKEN WRAP, BRILLIANT, CHICKEN, NUGGETS",
+    "text_prompt": "",
+    "TOKEN_FILE": "token.json",
+    "CREDENTIALS_FILE": "credentials.json",
+    "DRIVE_ID": "0AMC2Evk8hvfdUk9PVA"
 }
