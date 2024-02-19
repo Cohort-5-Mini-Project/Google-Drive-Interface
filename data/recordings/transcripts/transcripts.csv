@@ -27,7 +27,7 @@ C: Okay, okay. That would be good.
 S: Lovely. Is that everything for you? 
 C: Yeah, that's it for today. 
 S: That's fifteen fifty-seven at the next window. 
-C: Okay, sure. Thank you.",af,0,0,False,"spiri, syeah"
+C: Okay, sure. Thank you.",af,0,0,False,spiri
 " S: Welcome to ShefBurger, what can I get for you? 
 C: Hello, good morning. I would like to have a large Mambo combos. A double whopper, fries and a diet coke. And also an apple pie. 
 S: Can you repeat what you wanted in the combo, please? 
@@ -220,7 +220,7 @@ C: Yeah, the veggie one.
 S: Anything else for you today? 
 C: No, that's it. 
 S: Okay, great, that's five seventy nine at the next window.
-C: Thank you.",af,0,0,False,"senty, twentynine"
+C: Thank you.",af,0,0,False,"twentynine, senty"
 "S: Welcome to Shefburger. Can I take your order, please? 
 C: Yeah, hi could I have a veggie wrap, please?
 S: Yes, no problem would you like that as a combo?
@@ -1179,7 +1179,7 @@ C: No, but does the vegan Whopper come with vegan cheese?
 S: Yep, it does, yep.
 C: Okay, great. No, I think that's it. Do you guys -- do you guys want to?Okay, well, I do. Can -- that's -- that's everything, yeah.
 S: Great, thank you. That's twelve twenty-eight. Come to the next window when you're ready please.
-C: Cheers.",mz,0,0,False,"twentyeight, tookay"
+C: Cheers.",mz,0,0,False,tookay
 "S: Hi, welcome to ShefBurger. How can I help you?
 C: Hi, can I get a veggie wrap please?
 S: A veggie wrap, certainly. Would you like that in a combo or on its own?
@@ -1202,7 +1202,7 @@ S: On its own. Is that everything?
 C: That's everything, thank you.
 S: That's everything, great. That's eleven seventy-eight, if you go along to the next window you can pay.
 C: Cheers.
-S: Okay, thank you.",mz,0,0,False,"ninetythree, seventyeight"
+S: Okay, thank you.",mz,0,0,False,ninetythree
 "S: Hi, welcome to ShefBurger, what can I get for you?
 C: Hi, I've got like a serious issue with pickles. Is there any pickles on any of the wraps or the Zinger Burger?
 S: Could you repeat that? Sorry, it's very loud in your car.
@@ -1223,7 +1223,7 @@ S: Which size?
 C: Yeah, small regular.
 S: Is that all?
 C: That's everything, thank you.
-S: Great, thanks, that's seven pounds eight at the next window.",mz,0,0,False,thatd
+S: Great, thanks, that's seven pounds eight at the next window.",mz,0,0,False,
 "S: Hi, welcome to ShefBurger. What can I get for you?
 C: Could I get a large fries?
 S: Uh, certainly, one second. Yep, large fries. 
@@ -1837,7 +1837,7 @@ S: Sure. Okay, that will be all.
 S: Yeah, okay, if you go along to the next window to pay, have a nice day. 
 C: Thank you, you too. 
 S: Cheers, bye.
-C: Bye.",yx,0,0,False,"savouries, ok"
+C: Bye.",yx,0,0,False,savouries
 "S: Good evening, welcome to ShefBurger. Can I take your order, please? 
 C: Alright, can I get a chicken wrap?
 S: Chicken wrap, certainly. Would you like that as a combo at all? 
@@ -1897,7 +1897,7 @@ C: grilled.
 S: Okay, and a regular combo, fruit bag, and diet coke. 
 C: Yep.
 S: great. So that's everything then so and go through to the next point. We'll take payment and have a great day. 
-S: Thank you.",yx,0,3,False,"jr, darren, com"
+S: Thank you.",yx,0,3,False,"darren, jr, com"
 "S: Good morning, welcome to ShefBurger. Can I take your order please? 
 C: Hi, can I get a cheeseburger? 
 S: Cheeseburger, yep, certainly. Would you like that as a combo? 
@@ -1932,7 +1932,7 @@ S: Oh, I didn't get the cheese bites, sorry. And which sauce do you want with th
 C: Some ketchup. 
 S: Some ketchup. Great. That everything? 
 C: Yeah. 
-S: Great. Well, go to the next payment window, we'll take payments and your food will be with you shortly. Cheers.",yx,0,0,False,"jr, darren"
+S: Great. Well, go to the next payment window, we'll take payments and your food will be with you shortly. Cheers.",yx,0,0,False,"darren, jr"
 "S: Hi, welcome to ShefBurger, how can I help you today? 
 C: Hi, I think I'll get a Coca Cola Zero. 
 S: Coca Cola Zero, sure, we can do that for you. Would you like a small, regular or a large? 
@@ -1985,7 +1985,7 @@ S: No, okay, that's fifteen twenty seven. If you go onto the next window, you ca
 C: Sure, thank you. 
 S: Great, thank you. 
 C: Bye. 
-S: Bye.",yx,0,0,False,ok
+S: Bye.",yx,0,0,False,
 "S: Hello, good morning, welcome to ShefBurger. Can I take your order, please? 
 C: Oh, what veggie options do you have? Do you have like a veggie chicken wrap or anything like that? 
 S: No, because that wouldn't be a chicken. So you've got a veggie wrap and a vegan whopper, or we do some cheese bites as well. 
