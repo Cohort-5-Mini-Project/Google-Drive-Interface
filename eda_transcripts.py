@@ -60,12 +60,12 @@ def check_uk_misspellings(df, column_name):
         misspelled_words = spell.unknown(text.split())
         # remove shefburger and fanta and oreo
         misspelled_words = [word for word in misspelled_words if word.lower() not in [
-            "shefburger", "schwippe", "flavour", "im", "jesus", "thatll", "uhh", "cocacola", "im", "fanta", "oreo", "isnt", "thats", "dont", "cant", "wasnt", "wont", "havent", "hasnt", "didnt", "couldnt", "wouldnt", "shouldnt", "arent", "werent", "doesnt", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows"]]
+            "shefburger", "bbq", "erm", "sec", "ive", "mmm", "fourty", "sixtyfive", "plantbased", "cyeah", "okay", "sunday", "cyes", "ninetyeight", "realised", "ive", "thirtyeight", "eightyseven", "youll", "ive", "monday", "theyll", "shwippy", "shwippies", "flavour", "flavours", "fortyseven", "fiftyseven", "twentyseven", "fortyseven", "itll", "youve", "therell", "theyre", "youre", "im", "jesus", "theres", "weve", "youd", "thatll", "uhh", "cocacola", "im", "fanta", "oreo", "isnt", "thats", "dont", "cant", "wasnt", "wont", "havent", "hasnt", "didnt", "couldnt", "wouldnt", "shouldnt", "arent", "werent", "doesnt", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows", "whats", "wheres", "whens", "whys", "whos", "hows"]]
 
         return ', '.join(misspelled_words) if misspelled_words else None
 
     # Apply the function to the specified column and store the results in a new column
-    df['Misspellings'] = df[column_name].apply(
+    df['potential_misspellings'] = df[column_name].apply(
         lambda x: find_misspellings(x) if pd.notnull(x) else None)
 
     return df
@@ -94,6 +94,8 @@ df['clean_text'] = df['clean_text'].str.replace(
 
 
 df_checked = check_uk_misspellings(df, 'clean_text')
+# drop the clean_text column for clairty of output
+df_checked = df_checked.drop(columns=['clean_text'])
 
 df_checked.to_csv(os.path.join(
     TRANSCRIPTS_DIR, "transcripts.csv"), index=False)
