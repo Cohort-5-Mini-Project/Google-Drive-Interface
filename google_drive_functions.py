@@ -35,6 +35,7 @@ def create_directory(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
+
 def find_or_create_folder(service, folder_name, parent_id=None, drive_id=None):
     """Find a folder by name or create it if it doesn't exist."""
     query = f'mimeType="application/vnd.google-apps.folder" and name="{folder_name}"'
@@ -73,6 +74,51 @@ def find_or_create_folder(service, folder_name, parent_id=None, drive_id=None):
         return folder.get("id")
 
     return folder[0].get("id")
+
+
+def download_transcript_files(service):
+    """
+    Download files from Google Drive with a specific prefix and type.
+    """
+    try:
+        file_path = f"{DATA_DIR}/transcripts/"
+        create_directory(file_path)
+        query = (
+            f"name contains 'af_24' or name contains 'jbjc_24' or name contains 'tc_24' or name contains 'jlyc_24' or name contains 'yx_24' or name contains 'ajh_24' or name contains 'mz_24' or name contains 'pg_24'"
+        )
+        results = (
+            service.files()
+            .list(
+                q=query,
+                corpora="drive",
+                driveId=DRIVE_ID,
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True,
+                spaces="drive",
+                fields="nextPageToken, files(id, name)",
+            )
+            .execute()
+        )
+        items = results.get("files", [])
+
+        if not items:
+            print("No files found.")
+            return
+
+        for item in items:
+            if item["name"].startswith("."):
+                continue
+
+            print(f"{item['name']} ({item['id']})")
+            request = service.files().get_media(fileId=item["id"])
+            with io.FileIO(f'{file_path}{item["name"]}', "wb") as fh:
+                downloader = MediaIoBaseDownload(fh, request)
+                done = False
+                while not done:
+                    status, done = downloader.next_chunk()
+                    print(f"Download {int(status.progress() * 100)}%.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 
 def download_files(service, date_prefix, file_type):
@@ -134,7 +180,8 @@ def authenticate_google_drive():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(CREDENTIALS_FILE, SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file(
+                CREDENTIALS_FILE, SCOPES)
             creds = flow.run_local_server(port=0)
 
         with open(TOKEN_FILE, "w", encoding="utf-8") as token:
@@ -145,12 +192,16 @@ def authenticate_google_drive():
 
 def upload_files(service, date_prefix, file_type, drive_id=DRIVE_ID, model="base"):
     """Upload files to a specific path in Google Drive."""
-    base_folder_id = find_or_create_folder(service, "Recording Prep", drive_id=drive_id)
+    base_folder_id = find_or_create_folder(
+        service, "Recording Prep", drive_id=drive_id)
     pilot_folder_id = find_or_create_folder(
         service, "Pilot recordings", parent_id=base_folder_id, drive_id=drive_id
     )
     session_folder_id = find_or_create_folder(
         service, "Recording Sessions", parent_id=pilot_folder_id, drive_id=drive_id
+    )
+    transcripts_folder_id = find_or_create_folder(
+        service, "Transcripts", parent_id=session_folder_id, drive_id=drive_id
     )
     date_folder_id = find_or_create_folder(
         service,
