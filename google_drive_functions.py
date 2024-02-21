@@ -84,7 +84,7 @@ def download_transcript_files(service):
         file_path = f"{DATA_DIR}/transcripts/"
         create_directory(file_path)
         query = (
-            f"name contains 'af_24' or name contains 'jbjc_24' or name contains 'tc_24' or name contains 'jlyc_24' or name contains 'yx_24' or name contains 'ajh_24' or name contains 'mz_24' or name contains 'pg_24'"
+            f"name contains 'af_24' or name contains 'bs_24' or name contains 'fp_24' or name contains 'ik_24'  or name contains 'jbjc_24' or name contains 'tc_24' or name contains 'jlyc_24' or name contains 'yx_24' or name contains 'ajh_24' or name contains 'mz_24' or name contains 'pg_24'"
         )
         results = (
             service.files()

@@ -118,7 +118,7 @@ C: grilled.
 S: Okay, and a regular combo, fruit bag, and diet coke. 
 C: Yep.
 S: great. So that's everything then so and go through to the next point. We'll take payment and have a great day. 
-S: Thank you.",yx,0,3,False,"darren, com, jr"
+S: Thank you.",yx,0,3,False,"com, darren, jr"
 "S: Good morning, welcome to ShefBurger. Can I take your order please? 
 C: Hi, can I get a cheeseburger? 
 S: Cheeseburger, yep, certainly. Would you like that as a combo? 
@@ -153,7 +153,7 @@ S: Oh, I didn't get the cheese bites, sorry. And which sauce do you want with th
 C: Some ketchup. 
 S: Some ketchup. Great. That everything? 
 C: Yeah. 
-S: Great. Well, go to the next payment window, we'll take payments and your food will be with you shortly. Cheers.",yx,0,0,False,"darren, jr"
+S: Great. Well, go to the next payment window, we'll take payments and your food will be with you shortly. Cheers.",yx,0,0,False,"jr, darren"
 "S: Hi, welcome to ShefBurger, how can I help you today? 
 C: Hi, I think I'll get a Coca Cola Zero. 
 S: Coca Cola Zero, sure, we can do that for you. Would you like a small, regular or a large? 
@@ -1677,7 +1677,7 @@ C: Yeah, that's correct.
 S: Okay, that comes to twelve pounds seventy eight.
 C: That's a lot. 
 S: If you'd like to go to the next window to pay and then to collect your food. Have a nice day!
-C: Okay, thank you and you too.",mz,0,0,False,"wha, repea"
+C: Okay, thank you and you too.",mz,0,0,False,"repea, wha"
 "S: Hi there, welcome to ShefBurger. Can I take your order please?
 C: Sorry. Could I get a Mambo Combo large please?
 S: Yep, no problem.
@@ -2067,3 +2067,628 @@ S: No, the mustards are free.
 C: Okay, thank you. Then that's it. 
 S: Okay, thank you and have a nice day. Bye
 C: Thanks, you too. Bye. ",tc,0,0,False,mustards
+"S: Hi there, can I take your order please?
+C: Hi there, yeah. Can I cheese bites?
+S: Cheese bites, yes, no problem. Would you like any sauce with that?
+C: No sauce.
+S: Would you like anything else today?
+C: Yeah, can I get a mambo combo meal?
+S: Yes, no problem.
+C: Can I get a ve- vegan whopper with vegan cheese? Can I make that large?
+S: Yeah, no problem. And what sides would you like with that?
+C: Just fries with extra salt and water.
+S: And water, no problem. Is that everything for you today?
+C: Yeah, did you get the extra salt?
+S: I can pass a message on to the restaurant. You might not see it on your screen.
+C: Okay, thanks.
+S: So that would be top on nighty eight in total, is that okay?
+C: That's okay. Okay, great.
+S: Come to the next window please.
+C: Alright, bye.
+S: Bye-bye.",bs,0,0,False,"byebye, ve"
+"S: Good morning, welcome to ShefBurger. Can I take your order please?
+C: Hi there, first I'd order a double Whopper.
+S: Yep, so that'll be a Whopper with an extra beef patty, is that okay?
+C: Yeah.
+S: Would you like anything else? Might get a combo?
+C: Yeah, no, I want to get a second or- a second item which is a Mambo Combo which will have a regular Whopper in it.
+S: Yep, no problem. Is that a regular combo?
+C: Regular combo, yeah, with fries and a Diet Coke.
+S: Yep, no problem.
+C: And no salt on the fries.
+S: Okay. Is there anything else for you today?
+C: Can I get a Spr- separate Sprite Zero on its own?
+S: Yep, regular or large?
+C: Small.
+S: Great, anything else for you today?
+C: Not that everything.
+S: Great, thank you very much. That'll be seventeen fifty-seven. Come to the next window when you're ready please.
+C: Okay.",bs,0,0,False,spr
+"S: Good morning, can I take your order please?
+C: Hi there, can I get a Big Mac with no Big Mac sauce, extra onion. And can I make it a large combo with fries and orange juice?
+S: You certainly can.
+C: Could I also get an apple pie?
+S: Yeah, no problem.
+C: And a small Shwippy with Smarties.
+S: A Smarties small Shwippy, yeah, no problem. And what was the other item that you asked for there? Sorry I can't (())
+C: Extra onion I think it was.
+S: Extra onion.
+C: On the Big Mac.
+S: It won't come up on your screen but I'll pass your message on to the kitchen.
+C: Okay, perfect, thanks.
+S: Is there anything else I can get for you today?
+C: No, that's everything.
+S: Thank you very much. That's seven pound eighty-eight, comes to the next window when you're ready please.",bs,0,0,False,eightyeight
+"S: Hi there, can I take your order please?
+C: Hi there, can I get a Mambo combo large with a grilled chicken wrap, fries and water?
+S: Could you repeat the or- order please? There's a bit of background noise.
+C: Yeah, sure. Could a Mambo combo large with a chicken wrap, grilled, fries and water?
+S: Yeah, that's should be correct on the screen.
+C: Yeah.
+S: Anything else for you today?
+C: Yeah, could I get a chicken wrap on its own, grilled?
+S: Yeah, no problem.
+C: And could I get a water?
+S: Yeps, anything else for you today?
+C: No, that's everything, thank you.
+S: Okay, great, that'll be twelve pound ninety-seven. Come round to the next window when you're ready please.
+C: Okay, thank you.",bs,0,0,False,ninetyseven
+"S: Hi there, what can I get for you today?
+C: Can I ((just)) get a large Diet Coke please?
+S: Yep. Anything else?
+C: No, That's everything.
+S: Great, thank you. Come to the next window when you're ready please.
+C: ((Thanks)) bud.",bs,0,0,False,
+"S: Good morning, can I take your order please?
+C: Yeah, can I just get a bottle of water please?
+S: Yep, no problem, anything else?
+C: Do you want anything (())? Sorry? Okay, I get tap water everywhere. Okay, yeah, (()) that's fine, thank you very much.
+S: Thank you, come to the next window please.",bs,0,0,False,
+"S: Hi there, can I take your order please?
+C: Yeah, can I get a cheeseburger in a mambo combo please?
+S: Yep, regular or large?
+C: Just the regular, and can I have the cheeseburger with double bacon?
+S: Yep, no problem. And what size would you like with that?
+C: Just fries.
+S: And a drink?
+C: I'll have a Sprite Zero.
+S: ((Yep, sounds good.)) Anything else for you today?
+C: Yeah, I'd also like a Big Mac and a Mambo combo, also a regular one.
+S: Yeah, no problem.
+C: And the Big Mac with extra Big Mac sauce, but without lettuce if that's okay.
+S: Yep, no problem. And what size would you like with that?
+C: Fries as well, and a Diet Coke.
+S: Okay, anything else for you today?
+C: Yeah, can I get a Coke Zero as well? A large one.
+S: Of course. Is that -- Anything else for you?
+C: Do you want anything? No, not yet. Can I get a milkshake as well?
+S: Yeah, definitely. Regular, large, what size would you like?
+C: Yeah, regular strawberry one. Oh, regular chocolate one if you have that.
+S: Okay, yep, we do.
+C: That's all I think.
+S: Great, thank you. That will be eighteen pound fifty-six.
+C: Yeah.
+S: Come around when you're ready.",bs,0,0,False,fiftysix
+"S: Good morning, welcome to ShefBurger. Can I take your order please?
+C: Yeah, I'd like a crispy chicken wrap in a large combo.
+S: Yeah, no problem. What size would you like with that?
+C: Just fries and if possible with extra salt.
+S: Yep, no problem.
+C: And I'll have a Coke Zero.
+S: Yep, no problem. Anything else ((for)) you today?
+C: Yeah, can I also just get a water?
+S: Yep, no problem. Anything else today?
+C: How many calories does it have?
+S: The water?
+C: No, the meal in general.
+S: So a chicken wrap has three hundred and forty and with fries that will come out about seven hundred calories.
+C: Okay, yeah that works, thank you.
+S: Okay. Anything else that can help you with?
+C: That's it, thanks.
+S: Great, thank you.",bs,0,0,False,
+"S: Hi there, can I take your order please?
+C: Yeah, can I get a Big Mac and a combo? And is there something like a vegetarian Big Mac?
+S: We can do a vegan Whopper, if that works for you?
+C: Yeah, I think that's a good substitute.
+S: So was that a regular or large com- combo?
+C: Just a regular combo.
+S: Great, and what side would you like with that?
+C: Some fries and just an orange juice.
+S: Okay. Anything else for you today?
+C: Yeah, I'll have another vegan Whopper in a regular combo.
+S: Sure, no problem. And what size and drink would you like?
+C: I'd like some fries, but without salt.
+S: Yeah, no problem.
+C: And what drink would you like with that?
+S: I'll just have a Coke, a regular one.
+C: Great, anything else for you today?
+S: Yeah, just some fries please.
+C: Fries on the round. Yep, what size would you like?
+S: Small, regular or large?
+C: Just medium please.
+S: Yep. Anything else for you today?
+C: That's it, thanks.
+S: Great, if that all looks correct then that will be seventy pound ninety seven at the next window.
+C: Yeah, thanks.
+S: Thank you.",bs,0,0,False,com
+"S: Hi, welcome to ShefBurger. Can I take your order, please?
+C: Yeah, can I get a Big Mac, please, as a combo?
+S: Yep, regular or large?
+C: Just a regular.
+S: Great. And what sides and drink would you like?
+C: Just some fries and a water.
+S: Yeah, no problem. Anything else for you today?
+C: (())
+S: Yep. What flavour would you like? We have Oreo and Smarties.
+C: Do you want an Oreo or Smarties? Yeah, Oreo, please.
+S: Small or regular?
+C: What size would you like? A regular, please.
+S: Yep, no problem. Anything else?
+C: No, that's it. Thanks.
+S: Great, that's everything. Come ((on)) to the next window, please.",bs,0,0,False,
+"S: Welcome to ShefBurger. What can I get for you?
+C: Good morning. Can I have the -- an apple and a grape fruit bag?
+S: Yeah. (())
+C: And also an- another apple pie, please.
+S: An apple pie. Yeah, one second.
+C: Can I also know the total calories for those two items?
+S: Yeah, that would be two hundred eighty-nine calories.
+C: I think that's too much. Could you just remove the apple pie, please?
+S: Yeah, that brings it down to forty six calories.
+C: Yeah, perfect. Thank you.
+S: Just come to the next window and pay, please.
+C: Okay, thank you.",bs,0,0,False,eightynine
+"S: Hello, welcome to ShefBurger. How can I help you? 
+C: Hi there. Could I get a grilled Chicken Wrap, please?
+S: A Chicken Wrap? Do you want a combo or single? 
+C: No, just as it comes. 
+S: No problem. Well, what else do you want?
+C: If I could get a large Fanta and a small milkshake. That'd be great.
+S: A large Fanta and the small milkshake. 
+C: Yeah. Oh Sorry vanilla milkshake that is.
+ S: Vanilla milkshake. No problem Okay. So what do you want? anything else?
+C:  No, okay. Could you tell me how much that comes to? 
+S: Sorry, could you repeat that again for me? 
+C: What's the total? 
+S: So it's nine pound, nine pound twenty-seven.
+C: Okay might need to to make it a bit cheaper, that's all. If you could remove the milkshake, that'd be great. 
+S: No problem. That would be six pound seventy-eight.
+C: Perfect. Thank you. 
+S: All right, please go to the next window to collect you order. Have a great time.",fp,0,0,False,
+"S: Welcome to ShefBurger, what can I get for you? 
+C: Good morning, can I have two Mambo Combos, large Mambo Combos? 
+S: Yeah, what would you like in the first one? 
+C: The first one, can I have the Chicken Wrap, fried Chicken Wrap? 
+S: Yeah. 
+C: And the fries and orange juice. 
+S: Fries and orange juice? 
+C: Yes, thank you. 
+C: Sorry, was that a large or a regular combo? 
+C: Large, large one. 
+S: Okay, one second. 
+C: Sorry, what? A Veggie Wrap, okay. 
+S: Yeah, what would you like in the second combo?
+C: Can we, can we add a Veggie Wrap? 
+S: Yeah, is that in a combo as well? 
+C: Uh, on the combo? No, no, no. 
+S: Okay. 
+C: And for the second Mambo Combo, a larger Mambo Combo. Can I have the Big Mac? 
+S: Yeah. 
+C: With the chips and water. 
+S: And some water. Is that everything for you? 
+C: No, I- I would like to have another regular Mambo Combo. 
+S: Yeah. 
+C: With the Chicken Wrap, the fried Chicken Wrap. Could you just remove the red onion and cucumber? So we don't like it, we don't like them. 
+S: Yeah, certainly. That's an unremovable item. 
+C: Okay, then just skip it. 
+S: Sorry, would you still like the combo or not? 
+C: So we couldn't remove the onion and cucumber? 
+S: We can remove the cucumber, but not the onion. 
+C: Then remove the cucumber, please. 
+S: Yeah. 
+C: And for this combo, can I have the fries and water as well? 
+S: Yeah. 
+C: That's it for today. 
+S: Okay, that will be twenty-two sixty-six at the next window. 
+C: Okay, thank you.",fp,0,0,False,"sixtysix, twentytwo"
+"S: Hello, welcome to ShefBurger. How can I help you? 
+C: Hi, could I get a regular Mambo Combo, please, a Big Mac? 
+S: A Big Mac Mambo Combo. Do you want a regular or a large combo?
+C: A regular please.
+S: A regular. You want the fries with it or a fruit bag?
+C: Fries, please.
+S: Right do you want the salt on it? 
+C: Yeah, keep the salt.
+S: No problem. Any drink within with the combo- Mambo Combo?
+C: A coke.
+S: A coke, right. what else do you want? 
+C: That's everything, thank you. 
+S: That's everything. That is five pounds seventy-nine. Please go to the next window to collect your order, please.
+C: Cheers.
+S: Thank you.",fp,0,0,False,seventynine
+"S: Hello, welcome to ShefBurger, how can I help you? 
+C: Hi there, I'm wondering what vegetarian options you have? 
+S: We've got Vegan Whopper, we've got Veggie Wrap. 
+C: Yeah, a Veggie Wrap would be great actually. Do you do that as some kind of meal? 
+S: Yes, do you want a regular or a large meal? 
+C: Regular sounds great, if we get that with Fries and a Coke that'd be, that'd be great. 
+S: A regular- regular Coke or Diet Coke or Coke Zero? 
+C: Diet Coke please. 
+S: Diet Coke, fantastic. Do you want anything else? 
+C: Nope, that's everything, thank you. 
+S: It is five pound seventy-nine. Could you please go to the next window, could you collect your order please? 
+C: Great, thank you. 
+S: No problem, have a nice day.",fp,0,0,False,seventynine
+"S: Hello, welcome to ShefBurger. How can I help you? 
+C: Hi could I get an apple pie, please? 
+S: An Apple Pie, give me a sec. 
+C: Might have to make that two Apple Pies please. 
+S:  All right an apple pie, no problem. What else do you want? 
+S: Okay, two Apple Pies, sorry about that.
+C: That's okay. And an apple and grapefruit bug if you've got it. 
+S: Apple grapefruit bag. Yes, no problem. What else do you want? 
+C: Do you want anything else? 
+S: We've got banana milkshake, strawberry, and chocolate. 
+C: Yeah. 
+S: Do you want a small regular or large milkshake? Small, no problem. C: Have you got any kind of non-dairy options? 
+S: It's no, no. Yeah, okay. No problem. Is there anything else? 
+C: Think that's everything, thank you. 
+S: All right, that's four pound ninety-seven. You can go to the next window to collect your order, please. 
+C: Pricey. ",fp,0,0,False,ninetyseven
+"S: Good morning, welcome to ShefBurger. What can I get for you? 
+C: Morning, can I have a regular Mambo Combo? 
+S: Yeah, what would you like in it? 
+C: Yeah, with the Chicken Wrap, the Fries and... 
+S: Would you like a crispy or fried Chicken Wrap? 
+C: The fried one. 
+S: Yeah, what sides would you like? 
+C: The, the regular one. 
+S: Yeah. What sides and drink would you want? 
+C: And for the drinks, can I have the orange juice? 
+S: Yeah. 
+C: Anything else would you like? 
+S: Would you like Fries or Fruit Bag as a side? 
+S: Okay. Yeah, that's it for today. 
+S: Would you like fries or... 
+C: The fries, yeah. 
+S: Yeah, okay, great, thanks. That's five seventy-nine at the next window. 
+C: Okay, thank you.",fp,0,0,False,seventynine
+" S: Welcome to  ShefBurger, what can I get for you? 
+ C: Hi there, could I get a... Do you do a... Is there a vegetarian whopper? 
+S: There's a Vegan Whopper. 
+C: A vegan whopper, okay. I think that counts. I'll get one of those in a Mambo Combo then, please. 
+S: Yeah, a large or a regular combo? 
+C: Just a regular combo, please. 
+S: Great. What sides and drink? 
+C: I'll get Fries and a Coke Zero, please. 
+S: And a Coke Zero. Great. Anything else? 
+C: Yeah, could I get another Mambo Combo? 
+S: Yep. 
+C: A large this time. 
+S: Yeah, what would you like in that combo? 
+C: Chicken Wrap, please. 
+S: Yep. Does that need to be vegetarian as well? 
+C: No, it doesn't need to be vegetarian. 
+S: Great. Do you want a crispy or a fried chicken? 
+C: I'll get it crispy, please. 
+S: Great. What sides then? What drink? 
+C: Could I get Fries and a Diet Coke with that one, please? 
+S: Yep. Is that it or do you want anything else? 
+C: Do you guys want anything? An orange juice as well, then, please. 
+S: An orange juice. Anything else? 
+C: No, I think that's everything. Great, thank you.
+S: Great. That's sixteen fifty-seven at the next window.
+C: Oh, that's quite expensive, actually. Could you remove the- the chicken wrap Mambo combo? 
+S: Yeah, I can do that. That will be ten twenty-eight at the next window. 
+C: Okay, yeah, that's great. Thank you.",fp,0,0,False,
+"S: Hi, welcome to ShefBurger. What can I get for you? 
+C: Hi, could I get a Mambo Combo with a Chicken Wrap, please? 
+S: Yeah, would you like a fried or a crispy one? 
+C: I'll get that crispy, please. 
+S: Yeah. Would you like a regular large combo, sorry? 
+C: A regular combo, please. 
+S: That sounds good. What sides and drink would you like? 
+C: I'll get fries with no salt, please. 
+S: Yeah. 
+C: And a Diet Coke would be great. 
+S: A Diet Coke. Great. Is there anything else you'd like? 
+C: Yeah, could I get a stacker Zinger Burger? 
+S: Does that mean you want extra chicken? 
+C: Yeah, please, yeah. 
+S: Great. Just individually or do you want it as a combo? 
+C: Just that on its own, please. 
+S: That's great. 
+C: Do you guys want anything? Sorry? 
+S: Anything else for you? 
+C: No, that's all, thank you. 
+S: Great, that's thirteen pounds twenty-eight at the next window.
+C: Great, thank you.",fp,0,0,False,
+"S: Hello, welcome to ShefBurger. How can I help you? 
+C: Oh, yeah. Can I get a Mambo Combo Whopper please? 
+S: A Whopper. Yeah, do you want a regular combo or a large combo?
+C: Regular please.
+S: Regular, cool. As side do you want Fries or a Fruit Bag?
+C: Fries, please. 
+S: Fries. And and do you want a drink? 
+C: Yeah, just a bottle of water. if you have that. 
+S: Just a bottle of water. No problem. That's your Mambo Com- Whopper Mambo Combo with regular fries and water you want anything else?
+C: Yeah, I'd like an extra Big Mac on its own. 
+S: A Big Mac on its own. 
+C: But does it have does it have any sauce on it like anything spicy at all? 
+S: There's nothing spicy. I'm afraid. There's only Big Mac sauce. You can remove that if you don't want. 
+C: No, I think that should be fine. If I could just get a Big Mac on its own and an extra bottle of water. That'd be great.
+S: And the bottle water, no problem. All right, so you've got a Whopper a combo mam- a Mambo Combo of water a regular- with regular fries, water, and Big Mac and the water is that correct? 
+C: That's perfect. Thank you. 
+S: That's fourteen pounds fifty-seven. If you go to the next window to collect your order 
+C: Great. Thank you.
+S: Have a nice day.",fp,0,0,False,com
+"S: Hello, welcome to ShefBurger. How can I help you? 
+C: What wraps have you got? 
+S: We've got Chicken Wrap and Veggie Wrap. Which one do you want?
+C:  A chicken wrap would be would be good.
+S: A Chicken wrap. No problem, a chicken wrap. 
+C: If I could get that as a meal. A combo. 
+S: You want a regular meal or large meal. 
+C: Regular would be great.
+S: Regular. Okay. Do you want a Fries come with it or a Fruit Bag? 
+C: Yeah Fries and an orange juice to drink would be good. 
+S: An the orange juice, right. 
+C: Do you do any kids meals? 
+S: I'm afraid not. Sorry.
+C: If we could get a small fries as well that'd be good. 
+S: A small fries. 
+C: Very small fries. 
+S: No problem. What else do you want? 
+C: That's everything thank you. 
+S: That's everything. That's seven pounds thirty-eight. If you want to go to the next window to collect your order, please. 
+C: Thank you. 
+S: Thank you. Have a nice day",fp,0,0,False,
+"S: Hi, welcome to Shef Burger, how can I help you?
+C: Hi, good afternoon. Could I get a veggie wrap?
+S: A veggie wrap, certainly. Would you like that in a meal?
+C: No, I just want that by itself, I think. 
+S: Yeah, sure. Is there anything else for you? 
+C: Would you want a drink? Actually, could you add a Coke to that veggie wrap and make it a meal then?
+S: You want that to be a meal, so with the fries as well?
+C: Do you have like a fruit bag or something?
+S:  Yeah, there's a fruit bag. Would you like a regular or large combo? C: Just a regular. 
+S: Just a regular, okay.  With a fruit bag and it was a Coke, was it?
+C: Was it Coke? 
+S: A Coke, okay. Is there anything else for you?
+C: Yeah, could I get a large Mambo combo, please?
+S: A large Mambo combo, certainly. And what item would you like in that? What main?
+C: Big Mac, but I don't like the Big Mac sauce. 
+S: You don't like the Big Mac sauce, okay. 
+C: Then you still go, like, why did you get a Big Mac? But anyway.
+S: And it was a large combo, correct? 
+C: Yeah, it's a large combo.
+S: With fries or a fruit bag?
+C: Oh, I want no onions as well on it.
+S: No onions, certainly.
+C: And fries in that combo juice. Combo, yeah. 
+S: Fries in the combo, and what drink would you like? 
+C: Orange juice. 
+S: An orange juice, certainly. Is there anything else for you today?
+C: Are you feeling like a Zinger burger? I'll have a Zinger burger. 
+S: You'll have a Zinger burger?
+C: Yeah, I'll take it with my wife. 
+S: You like that in a combo? 
+C: Regular, but extra major. She loves a mayo. 
+S: With extra mayo, sure. So a regular combo or just outside of a combo? 
+C: No combo, no combo. 
+S: No combo, okay. 
+C: She'll go mad if I go in with fries again.
+S: Sure. Is that everything for you? 
+C: Yeah, that's everything. 
+S: Okay, great. That's seventeen fifty-seven. If you go to the next window to pay, that'd be great.
+S: Great, cheers.
+C: Thank you. 
+S: Bye.",ik,0,0,False,shef
+"S: Hi, welcome to Chef Burger. What can I get for you today?
+C: Hiya. Could I need to make sure something before I place my order.
+S: Yeah, of course.
+C: Cause I'm really, really allergic to gluten. My gastroenterologist was like, you cannot have gluten. It's the worst thing for you. 
+S: Okay. 
+C: Yeah, so I need you to make sure that when you make this order that no gluten is in it and it's prepared by people with gloves. I do not want gluten at all. Like, zero gluten because I'd literally die. 
+S: Yes, okay. I will pass that along to the kitchen.
+C: Okay. Yeah. I just need a milkshake. 
+S: You just want a milkshake?
+C: Yeah, a large please with vanilla. 
+S: A large vanilla milkshake, certainly. And that's everything for you today?
+C: Yeah, because I can't really trust, you know, that there's no.
+S: Sure, there's quite a lot of gluten on the menu, I understand. 
+C: There is, yeah. 
+S: Yeah, we'll make sure that that's completely gluten-free for you and that the kitchen is is very careful about it. 
+C: Great, thank you. 
+S: If you just go on to the next window, you can pay. 
+C: Oh, who's serving me today, just in case I have a reaction?
+S: This is Robert.
+C: Robert, okay. 
+S: Yeah. You're going to report me? 
+C: No, if I have a reaction, maybe.
+S: Okay. I assure you, you won't, so my job is safe. 
+C: Okay. 
+S: Thank you for coming to Chef Burger today. 
+C: Thanks. 
+S: Cheers, bye.
+C: Bye.",ik,0,0,False,"robert, glutenfree"
+"S: Hi, welcome to Shef Burger. How can I help you today?
+C: Hello, how are you doing today?
+S: Oh, I'm great, thank you. Thank you for asking.
+C: Could I get, please, a Mambo Combo, regular? 
+S: A Mambo Combo, certainly. With what main? 
+C: I want a Big Mac, I think. 
+S: A Big Mac, okay. 
+C: Is that a regular or a large combo? 
+S: Just a regular. 
+C: Just a regular. 
+S: Fries or a fruit bag? 
+C: No, I don't want a large. It's not cheat day today. Can I get some fries? 
+S: Yeah, certainly. And what drink would you like In this combo? 
+C: What drinks have you got? 
+S: We've got water, Coke, Diet Coke, Coke Zero, Sprite Zero, Fanta, and orange juice. 
+C: Oh, you had me at Sprite Zero. Add that in. 
+S: Yeah, certainly. Is there anything else for you today? 
+C: Do you want out? No, that's everything. 
+S: That's everything. Okay, great. 
+C: If you go along to the next window, that's $5.79 to pay. 
+S: Perfect. Thanks.
+C: Okay, thanks. 
+S: Bye. 
+C: Bye.",ik,1,3,False,shef
+"S: Hi there, welcome to Shef Burger. What can I get for you today?
+C: Hi, can I get a Mambo Combo, I guess? 
+S: A Mambo Combo, sure. What main would you like in the Mambo Combo? 
+C: Chicken nuggets? 
+S: Chicken nuggets. I'm afraid we can't do a Mambo Combo with chicken nuggets in, it doesn't count as a main. 
+C: What?
+S: I'm afraid that's just the system.
+C: I swear I've got chicken nuggets as a main from here before as a Mambo Combo.
+S: I can do you nuggets on their own or I can do you a Mambo Combo with a different item. 
+C: What other items have you got then?
+S: We've got chicken and veggie wraps, there's a selection of burgers, Zinger Burger, Cheeseburger, Whopper, Big Mac or a chicken salad.
+C: I don't know, I mean, can you not just put the chicken nuggets in a bun or something? 
+S: Sorry, you want the chicken nuggets in a bun?
+C: I just don't see why you can't get chicken nuggets in anyway. 
+S: They wouldn't be in a bun. They wouldn't be in a bun if they were in a meal, I think.
+C: Oh no, you just take out... anyway. I guess I'll have a Big Mac then, reluctantly.
+S: You'll have a Big Mac, reluctantly, okay. Would you like a regular or a large combo? 
+C: Well, regular.
+S: Regular. Fries or a fruit bag in that combo?
+C: I'll have fries. You know we've waited here like 40 minutes in this queue and you're telling me you can't do chicken.
+S: Oh, I'm sorry to hear that. My apologies that you've had to wait so long. 
+C: Your job's going to get replaced by a robot soon anyway.
+S: I'll have to find another one. Would you like... what drink would you like in your combo?
+C: Coke zero.
+S: Coke zero, for sure. Is there anything else for you?
+C: Wait, wait, wait, one sec. Yeah, sure. Do you want anything? Yeah, have you got vegan Whoppers?
+S: Yeah, we can do a vegan Whopper for you.
+C: Thank God. Yeah, and do you want a drink? Yeah, orange juice please.
+S: See...
+C: That's the one made from oranges. 
+S: Yeah, you don't want the Whopper in a meal. You just want it on its own and then an orange juice as well.
+C: We don't want to make it too complex for you. 
+S: Okay. Is that all for you today?
+C: Yes.
+S: That's 14.57 if you just go along to the next window to pay.",ik,0,6,False,shef
+"S: Hi, welcome to Shef Burger. How can I help you?
+C: Hiya. Could I get a regular Fanta, please? 
+S: A regular Fanta, certainly. 
+C: Yeah. And do you have, what is it? They do them in that other one, share boxes of chicken nuggets? 
+S: Yeah, we do a share box of nuggets. 
+C: Okay. I love ketchup. I want like three extra packets of ketchup on there. 
+S: Certainly, I can do that for you.
+C: Actually, no, make it four. 
+S: Make it four, sure. Is there anything else for you today?
+C: I'm feeling a mambo combo.
+S: A mambo combo? What kind of, what main would you like? 
+C: I love chicken nuggets, so just add more in. You can get wraps as a combo, I guess. I think you can. Can you get wraps as a combo?
+S: Yeah, you can get a chicken wrap or a veggie wrap as a combo. 
+C: Then make it a chicken, do you want chicken wrap?  Okay, make it a chicken wrap mambo combo.
+S: Certainly, would you like a regular or a large? 
+C: Yeah, fries, regular. 
+S: Regular with fries, and what's the drink with that? 
+C: You got anything with like lemony? 
+S: Yeah, we do Sprite Zero. 
+C: Perfect. 
+S: Great. Is that all for you today?
+C: One second, let me just think. So I wanted the Fanta, chicken nuggets, and the mambo combo, yeah? 
+S: Yep. 
+C: Okay, cool. Yeah, no, that's everything.
+S: Okay, great. If you just go on to the next window to pay, that'd be fantastic.
+C: Great.
+S: Cheers, bye now.
+C: Bye.",ik,0,0,False,shef
+"S: Hello, welcome to Shef Burger. How can I help you?
+C: Hi, how are you doing?
+S: I'm great, thank you. What would you like today?
+C: I would like a... Do you do vanilla milkshakes at all?
+S: We do do vanilla milkshakes, yeah.
+C: Perfect. And what size are those?
+S: We can do a small, regular or a large.
+C: Give it to me regular.
+S: We'll give it to you regular, certainly. Is there anything else for you today?
+C: Oh, can I make it vanilla milkshake?
+S: Yes, it's a vanilla milkshake.
+C: And do you want an apple pie? Oh, it's a cheat day. Yeah, let's get.. How many calories are in that milkshake?
+S: The milkshake has 366 calories.
+C: Oh, that's way over my calorie intake of 100.
+S: I'm sorry to hear that.
+C: Let's just sub the calorie count then. Could I get an apple pie as well?
+S: Yeah, sure.
+C: Yeah.
+S: Is that everything for you today?
+C: Well, I was going to get a salad, but there's no point now, is there?
+S: No. No, it's a cheat day, after all.
+C: Yeah, exactly. And you don't need salad on a cheat day. Do you want out? Okay, great. No, that's everything. 
+S: Great, thank you.
+C: I'll roll over to the next window. 
+S: Yeah, great. Thank you.
+C: Cheers. Bye.",ik,0,6,False,shef
+"S: Hello, welcome to Shef Burger. How can I help you? 
+C: Hiya, I'd like to get two chicken wrap mumbo combos.
+S: Two chicken wrap mumbo combos, no problem.  Do you want a regular or a large?
+C: One large, one regular. I'm starving.
+S: Okay, so start with the regular.  Do you want fries or a fruit bag with it?
+C: Fries with that. 
+S: What drink do you want? 
+C: Sorry?
+S: What drink do you want? 
+C: Water, please.
+S: Water. 
+C: If there's any cucumber on that wrap, could you take it off, please? 
+S: Cucumber. All right, so a chicken wrap with no cucumber. 
+C: Yep. 
+S: Without cucumber. Sorry, what's the drink again?
+C: Water, please.
+S: Water, yeah, no problem. So what about the second mumbo combo?
+C: So this is a large combo with fries and some juice.
+S: Orange juice, right?
+C: That sounds good, yep.
+S: All right, what else do you want?
+C: Could I get a Big Mac, please, as a combo?
+S: As a regular or a large combo?
+C: A large mumbo combo. 
+S: No problem. What side do you want? 
+C: Fries. 
+S: Fries.
+C: Oh, yeah, that's true, actually.  On the regular chicken wrap, could you add on some extra red onion, please? 
+S: On the regular chicken wrap? The one without a cucumber, isn't it? C: Yeah, that's it. If you could swap the cucumber for onion, that'd be awesome. You just gotta live with it. 
+S: No problem, sir. So what else do you... 
+C: Did you get that? 
+S: Oh, sorry, veggie wrap.  It has tortilla, veggie dip, tomato, lettuce, red onions, which...
+C: If you take his red onions and then put them on mine, so I've got, like, extra red onions, that'd be great. 
+C: Sorry, we could...we can't... 
+S: No problem. So, red, no problem. 
+C: I'll get it, don't worry about it
+S: Sorry, for the Big Mac, Big Mac combo, which drink do you want?
+C: What do I want? Water, please.
+S: All right, so that's... One second, please.  
+C: Must be new. 
+S: What else do you want, sir? 
+C: That's everything, thank you.
+S: That's twenty-two pounds sixty-six. If you go to the next window to click your order. 
+C: Cheers.
+S: Thank you. Have a good day.",ik,0,0,False,"mumbo, sixtysix, couldwe, twentytwo, shef"
+"S: Good afternoon, welcome to Shef Burger, how may I help?
+C: Hi there, could I get a Mambo Combo please? 
+S: Mambo Combo, what would you like in that Mambo Combo? 
+C: Could I get a Big Mac please? 
+S: A Big Mac, one second, yep. Do you want that as a regular Combo or a large Combo? 
+C: Yeah, just a regular is fine, thank you. 
+S: Great, would you like fries or fruit bag? 
+C: I'll get fries with that one please. 
+S: And what drink would you like? 
+C: Yeah, Coca-Cola. 
+S: Coca-Cola, regular or zero or diet? 
+C: Just a full-fat Coca-Cola please. 
+S: Okay, regular, great. Anything else for you today sir? 
+C: Yeah, I'll get another Coca-Cola, regular Coca-Cola but a small size. 
+S: Okay, one second, small diet, no you don't want a diet Coke do you? 
+C: No, no, full fat, I need the sugar. 
+S: Small Coke, great.  Anything else? 
+C: No, that's all for me today.
+S: Okay, so for today. That's going to be seven pounds thirty-eight. If you go to the next point, we'll take payment from you, and we'll be out in a moment. Thanks.
+C: Okay, great, thank you. 
+S: Cheers, bye. 
+C: Cheers, bye.",ik,0,0,False,"fullfat, shef"
